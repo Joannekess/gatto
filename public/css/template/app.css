@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Ahsing";
+    src: url("../../font/Ahsing-Regular.otf");
+}
+
+@font-face {
+    font-family: "Moon";
+    src: url("../../font/moon_get-Heavy.ttf");
+}
+
+@font-face {
+    font-family: "Jua";
+    src: url("../../font/Jua-Regular.ttf");
+}
+
+:root {
+    --brown: #915821;
+    --light-brown: #bc8f59;
+    --cream: #d2c7b9;
+    --orange: #bf7238;
+    --dark-purple: #a26e67;
+}

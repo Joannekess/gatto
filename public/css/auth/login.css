@@ -1,0 +1,73 @@
+.content {
+    background-color: var(--cream);
+    background-image: url(../../image/bg-circle2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.login-logo {
+    width: 10%;
+    margin-top: 80px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    width: 50%;
+}
+
+.card-body h1 {
+    font-family: Moon;
+    color: var(--brown);
+}
+
+.form-label {
+    font-family: Jua;
+    color: var(--brown);
+    font-size: 1.5rem;
+}
+
+.form-control {
+    border-radius: 50px;
+    background-color: var(--cream);
+    color: var(--brown);
+    font-family: Jua;
+    font-size: 1rem;
+}
+
+.form-check-label {
+    font-family: Jua;
+    color: var(--brown);
+}
+
+.login-form {
+    font-family: "Moon";
+    font-size: 1.1em;
+    color: #fff;
+    background-color: var(--brown);
+    padding: 0.6rem 3rem;
+    border-radius: 50px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+    letter-spacing: 5px;
+}
+
+.login-form:hover {
+    background-color: var(--light-brown);
+    color: #fff;
+    transition: ease-in-out 0.3s;
+    transform: translateY(-2px);
+}
+
+.text-signup {
+    font-family: Jua;
+    color: var(--brown);
+    font-size: 1.2rem;
+}
+
+.text-signup a {
+    color: var(--orange);
+    text-decoration: none;
+}

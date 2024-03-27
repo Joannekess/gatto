@@ -1,0 +1,68 @@
+.content {
+    background-color: #d4ba9c;
+    background-image: url(../../image/bg-kotak.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 3rem;
+    overflow: hidden;
+    height: 100vh;
+}
+.img img {
+    max-width: 150%;
+    height: 100%;
+    margin-left: -20rem;
+}
+
+.swiper {
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-top: 5rem;
+    background-color: var(--cream);
+    width: 600px;
+    height: 700px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.swiper-pagination-bullet {
+    background: var(--brown);
+    margin-top: 1rem;
+}
+
+.swiper-pagination-bullet-active {
+    margin-top: 1rem;
+    background: var(--brown);
+}
+
+.swiper-slide h1 {
+    font-family: "Moon";
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+    color: var(--brown);
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.swiper-slide h2 {
+    font-size: 3rem;
+    color: var(--orange);
+    text-align: center;
+}
+
+.swiper-slide h3 {
+    font-family: "Jua";
+    font-size: 1.3rem;
+    letter-spacing: 0.3rem;
+    color: var(--orange);
+    text-align: center;
+}
+
+.swiper-slide p {
+    font-family: "Jua";
+    font-size: 1.3rem;
+    letter-spacing: 0.05rem;
+    color: var(--brown);
+    text-align: center;
+    padding: 1rem 1rem 0 1rem;
+}

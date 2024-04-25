@@ -13,4 +13,10 @@ class DiagnosisController extends Controller
         $symptoms = Symptom::groupBy('NamaGejala')->get();
         return view('page.diagnosis')->with('data', $data)->with('symptoms', $symptoms)->with('nomor', 1);
     }
+
+    public function diagnosisRun(Request $request) {
+        
+
+
+    }
 }

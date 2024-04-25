@@ -16,7 +16,7 @@
     <div class="row">
         <h1 class="text-center welcome">WELCOME</h1>
         <div class="col">
-            <h1>Check your cat’s <br> health here!</h1>
+            <h1>Periksa kesehatan <br> kucing Anda di sini!</h1>
             <hr>
             @guest
               <a href="/login" class="button type--A">

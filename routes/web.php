@@ -1,11 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DiagnosisController;
 use App\Http\Controllers\DiseasesController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\SessionController; 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HistoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +42,15 @@ Route::group(['middleware' => 'userlogin'], function () {
     Route::get('/home', [HomeController::class, 'index']);
     // Diagnose
     Route::get('/diagnose', [DiagnosisController::class, 'diagnosis']);
+    Route::post('/diagnose', [DiagnosisController::class, 'diagnosisRun']) -> name('diagnosisRun');
     // Diseases
     Route::get('/diseases', [DiseasesController::class, 'diseases']);
+    // Profile
+    Route::get('/profile', [ProfileController::class, 'profile']);
+    // Update Profile
+    Route::get('/profile/update/{id}', [ProfileController::class, 'update']);
+    Route::put('/profile/update', [ProfileController::class, 'updateProfile']) -> name('updateProfile');
+    // History
+    Route::get('/history', [HistoryController::class, 'history']);
 });
 

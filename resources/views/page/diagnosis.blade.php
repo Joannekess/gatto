@@ -10,7 +10,7 @@
     </div>    
     <div class="d-flex justify-content-center">
     <div class="box-form">
-        <form action="">
+        <form action={{ route('diagnosisRun') }} method="POST">
             <table class="t-diagnosis">
                 <tbody>
                     @csrf

@@ -43,8 +43,8 @@
                 <a href="/home" class="px-4 fs-4 mt-3">HOME</a>
                 <a href="/diagnose" class="px-4 fs-4 mt-3">DIAGNOSE</a>
                 <a href="/diseases" class="px-4 fs-4 mt-3">DISEASES</a>
-                <a href="/" class="px-4 fs-4 mt-3">HISTORY</a>
-                <a href="/" class="px-4 fs-4 mt-3">PROFILE</a>
+                <a href="/history" class="px-4 fs-4 mt-3">HISTORY</a>
+                <a href="/profile" class="px-4 fs-4 mt-3">PROFILE</a>
             </div>
             <form action="/logout" id="logout">
                 <button class="navbar-nav login btn" type="button" name="logout" id="logout"> <img src="{{ asset('/image/paw.png')}}"> LOGOUT </button>

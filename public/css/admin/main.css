@@ -1,0 +1,113 @@
+.content {
+    /* background-color: var(--background); */
+    background-image: url(../../image/bg-glow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.title h3 {
+    color: var(--pink);
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+    margin-top: 2rem;
+    margin-bottom: -2.5rem;
+}
+
+.title h1 {
+    text-transform: uppercase;
+    color: var(--dark-pink);
+    font-family: "Ahsing";
+    font-size: 8rem;
+    letter-spacing: 1rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    box-shadow: 0.5rem 0.5rem 1rem 0 rgba(92, 72, 72, 0.2);
+    border-radius: 1.4rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 3rem 0;
+    width: 300px;
+    height: 380px;
+}
+
+.card:hover {
+    transition: ease-in-out 0.5s;
+    transform: translateY(-15px);
+}
+
+.circle {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.col h3 {
+    color: #ffa5a5;
+    font-size: 5rem;
+}
+
+/* C1 */
+.c1 {
+    background-color: #ffa5a5;
+}
+
+.c1 .circle {
+    background-color: #ffe8e8;
+}
+
+.c1 h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+    font-style: italic;
+    padding-top: 1rem;
+}
+
+/* C2 */
+.c2 {
+    background-color: #ffd3d3;
+}
+
+.c2 .circle {
+    background-color: #ffffff;
+}
+
+.c2 h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    color: var(--dark-pink);
+    font-weight: 700;
+    font-style: italic;
+    padding-top: 1rem;
+}
+
+/* C3 */
+
+.c3 {
+    background-color: #ffffff;
+}
+
+.c3 .circle {
+    background-color: #ffcfcf;
+}
+
+.c3 h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    color: var(--dark-pink);
+    font-weight: 700;
+    font-style: italic;
+    padding-top: 1rem;
+}

@@ -13,10 +13,51 @@
     src: url("../../font/Jua-Regular.ttf");
 }
 
+/* font-family: "Montserrat", sans-serif; */
+
 :root {
     --brown: #915821;
     --light-brown: #bc8f59;
     --cream: #d2c7b9;
     --orange: #bf7238;
     --dark-purple: #a26e67;
+    --light-pink: #ffb7b7;
+    --pink: #fb9780;
+    --dark-pink: #af5a47;
+    --background: #fff7f4;
+    --box: #ffece5;
+}
+
+@supports not (backdrop-filter: blur(4px)) {
+    body > *:not(#element) {
+        filter: blur(4px);
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.pagination {
+    font-family: "Jua";
+}
+
+.pagination .disabled .page-link {
+    background-color: lightgrey !important;
+}
+
+.pagination .page-link {
+    /* background-color: var(--light-pink) !important; */
+    color: var(--dark-pink) !important;
+    transition: none !important;
+    transform: none !important;
+}
+
+.pagination .page-item span {
+    background-color: var(--light-pink) !important;
+}
+
+.active > .page-link,
+.page-link.active {
+    border: none !important;
 }

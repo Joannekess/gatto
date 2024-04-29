@@ -3,68 +3,39 @@
     <link rel="stylesheet" href="{{ asset('css/page/diseases.css') }}">
 @endsection
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="img">
-                <img src="{{ asset('/image/cat-7.png') }}" alt="cat">
-            </div>
-        </div>
-        <div class="col">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <h1>CAT DISEASES</h1>
-                        <h3>That Zoonotic</h3>
-                        <p>Zoonosis adalah sebutan untuk penyakit yang berasal dari hewan dan dapat ditularkan ke manusia. Penyakit tersebut dapat disebabkan oleh virus, bakteri, jamur, protozoa, maupun cacing.</p>
-                        <p>Gatto akan membantu kalian dalam mendiagnosa kucing dengan penyakit zoonosis, yaitu Leptospirosis, Rabies, Ringworm, Toxoplasma, dan Toxocariasis.</p>
-                        <p>Slide halaman ini untuk melihat penyakit lainnya.</p>
-                        <h2><i class="bi bi-arrow-right"></i></h2>
-
-                    </div>
-                    @foreach ($data as $data)
-                    <div class="swiper-slide">
-                        <h1>{{ $data->namaPenyakit }}</h1>
-                        <h3>What is {{ $data->namaPenyakit }}?</h3>
-                        <p>{{ $data->detailPenyakit }}</p>
-                        <p>{{ $data->pencegahanPenyakit }}</p>
-                    </div>
-                    @endforeach
-                    {{-- <div class="swiper-slide">
-                        <h1>LEPTOSPIROSIS</h1>
-                        <h3>What is Leptospirosis?</h3>
-                        <p>Leptospirosis is an infection caused by corkscrew-shaped bacteria called Leptospira. Signs and symptoms can range from none to mild such as headaches, muscle pains, and fevers; to severe with bleeding from the lungs or meningitis.</p>
-                        <p>If the infection causes the person to turn yellow, have kidney failure and bleeding, it is then known as Weil's disease. If it also causes bleeding into the lungs then it is known as severe pulmonary hemorrhage syndrome.</p>
-                    {{-- <div class="swiper-slide">
-                        <h1>RABIES</h1>
-                        <h3>What is Rabies?</h3>
-                        <p>Rabies is a viral disease that causes inflammation of the brain in humans and other mammals. Early symptoms can include fever and tingling at the site of exposure.</p>
-                        <p>Once symptoms appear, the result is nearly always death. The time period between contracting the disease and the start of symptoms is usually one to three months, but can vary from less than one week to more than one year.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1>RINGWORM</h1>
-                        <h3>What is Ringworm?</h3>
-                        <p>Ringworm is a common fungal infection that can cause a red or silvery ring-like rash on the skin. Ringworm commonly affects arms and legs, but it can appear almost anywhere on the body. Despite its name, ringworm doesn't have anything to do with worms.</p>
-                        <p>Ringworm is also called tinea. When it appears on the scalp, it's called tinea capitis. On other parts of the body, tinea is often known by different names, such as athlete's foot (tinea pedis) and jock itch (tinea cruris).</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1>SCABIES</h1>
-                        <h3>What is Scabies?</h3>
-                        <p>Scabies is an itchy skin condition caused by a tiny burrowing mite called Sarcoptes scabiei. Intense itching occurs in the area where the mite burrows. The urge to scratch may be especially strong at night.</p>
-                        <p>Scabies is contagious and can spread quickly through close physical contact in a family, child care group, school class, nursing home, or prison. Because scabies is so contagious, doctors often recommend treatment for entire families or contact groups.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1>TOXOCARIASIS</h1>
-                        <h3>What is Toxocariasis?</h3>
-                        <p>Toxocariasis is an infection transmitted from animals to humans (zoonosis) caused by the parasitic roundworms commonly found in the intestine of dogs (Toxocara canis) and cats (T. cati). The disease is also known as visceral larva migrans (VLM).</p>
-                        <p>Humans can become infected by accidentally swallowing dirt that has been contaminated with dog or cat feces that contain infectious Toxocara eggs. Young children are at the highest risk of infection.</p>
-                    </div> --}}
+<div id="sec-1">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="img">
+                    <img src="{{ asset('/image/cat/3.png') }}" alt="cat" class="img-fluid">
                 </div>
-                <div class="swiper-pagination"></div>
+            </div>
+            <div class="col">
+                <div class="title">
+                    <h1>PENYAKIT KUCING YANG ZOONOSIS</h1>
+                    <h3>Zoonosis adalah sebutan untuk penyakit yang berasal dari hewan dan dapat ditularkan ke manusia. Penyakit tersebut dapat disebabkan oleh virus, bakteri, jamur, protozoa, maupun cacing.
+                    <br><br>Gatto akan membantu kalian dalam mendiagnosa kucing dengan penyakit zoonosis, yaitu Leptospirosis, Rabies, Ringworm, Toxoplasma, dan Toxocariasis.</h3>
+                    </div>
+                </div>
             </div>
         </div>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            @foreach ($data as $data)
+            <div class="swiper-slide">
+                <h1>{{ $data->namaPenyakit }}</h1>
+                <h3>What is {{ $data->namaPenyakit }}?</h3>
+                <p>{{ $data->detailPenyakit }}</p>
+                <h2>PENCEGAHAN</h2>
+                <p>{{ $data->pencegahanPenyakit }}</p>
+            </div>
+            @endforeach
+        </div>
+        <div class="swiper-pagination"></div>
     </div>
 </div>
+
   <script>
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,

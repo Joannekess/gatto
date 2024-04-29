@@ -3,21 +3,13 @@
     <link rel="stylesheet" href="{{ asset('css/page/landing.css') }}">
 @endsection
 @section('content')
-    <!-- <img src="{{ asset('/image/hand.png') }}" alt="hand" class="float-start img-fluid home-bg d-block"> -->
-
-<!-- <div class="container">
-    <div class="main-image">
-        <img src="{{ asset('/image/logo-brown.png') }}" alt="logo"  class="img-fluid mx-auto d-block home-logo">
-        <h1 class="logo-text text-center">Check your cat’s health here!</h1>
-    </div>
-</div> -->
-
 <div class="container">
-    <div class="row">
-        <h1 class="text-center welcome">WELCOME</h1>
-        <div class="col">
-            <h1>Periksa kesehatan <br> kucing Anda di sini!</h1>
-            <hr>
+    <div class="box">
+    <div class="row align-item-center pt-5">
+        <div class="col kiri">
+            <h3>WELCOME</h3>
+            <h1>Pawrents</h1>
+            <h4>Periksa kesehatan kucing anda di sini!</h4>
             @guest
               <a href="/login" class="button type--A">
                 <div class="button__line"></div>
@@ -36,11 +28,13 @@
                 </a>
             @endguest
             </div>
+
         <div class="col">
             <div class="main-cat">
-                <img src="{{ asset('/image/cat-4.png') }}" alt="logo"  class="img-fluid">
+                <img src="{{ asset('/image/cat/2.png') }}" alt="logo"  class="img-fluid">
             </div>
         </div>
+    </div>
     </div>
 </div>
 @endsection

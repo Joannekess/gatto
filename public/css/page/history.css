@@ -1,0 +1,134 @@
+.content {
+    background-color: var(--background);
+    background-image: url(../../image/bg-glow3.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    /* padding-bottom: 3rem; */
+    /* overflow: hidden; */
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+}
+
+.title h1 {
+    text-align: center;
+    padding-top: 10vh;
+    padding-bottom: 3vh;
+    text-transform: uppercase;
+    color: var(--dark-pink);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 0.7rem;
+}
+
+.table-history {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--box) !important;
+    border-radius: 20px;
+    box-shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.25);
+}
+
+th {
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--light-pink);
+}
+
+td {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark-pink);
+    text-align: center;
+    padding: 0.3rem;
+}
+
+.btn-remove {
+    background-color: transparent;
+    border: none;
+    color: var(--light-pink);
+    font-size: 2rem;
+}
+
+.btn-remove:hover {
+    transition: ease-in-out 0.3s;
+    color: var(--dark-pink);
+}
+
+.modal-content {
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.modal-body h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark-pink);
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+}
+
+.modal-body h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--dark-pink);
+    letter-spacing: 0.6rem;
+    text-transform: uppercase;
+}
+
+.modal-body h3 {
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--pink);
+}
+
+.modal-body h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--pink);
+    font-style: italic;
+}
+
+.modal-body h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--pink);
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    padding-top: 1rem;
+}
+
+.modal-body p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--dark-pink);
+    letter-spacing: 0.1rem;
+}
+
+.chat a {
+    font-family: "Moon";
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #fb9780;
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.chat a:hover {
+    background-color: var(--dark-pink);
+    color: white;
+    transition: ease-in-out 0.3s;
+    transform: translateY(-2px);
+}

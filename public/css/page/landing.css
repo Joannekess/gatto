@@ -1,33 +1,59 @@
 .content {
-    background-color: var(--cream);
-    background-image: url(../../image/bg-circle2.png);
+    background-color: var(--background);
+    background-image: url(../../image/bg-circle-pink.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
     overflow: hidden;
 }
 
-.welcome {
-    font-family: "Montserrat", sans-serif;
-    font-size: 8.5rem;
-    color: white;
-    padding-top: 5rem;
-    letter-spacing: 5rem;
-    font-weight: 1000;
-    /* text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); */
+.main-cat {
+    min-width: 110%;
+    height: 100%;
+    filter: drop-shadow(0 0 10rem var(--pink));
 }
 
-.main-cat {
-    width: 100%;
+.row {
+    align-items: center;
+    justify-content: center;
+    display: flex;
     height: 100%;
-    margin-top: -20rem;
+}
+.kiri {
+    margin-top: -5%;
+}
+
+.box {
+    box-shadow: 0 0 3rem 0 rgba(131, 13, 13, 0.2);
+    border-radius: 4rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding-left: 3rem;
+    margin-top: 4rem;
+    backdrop-filter: blur(10px);
 }
 
 .col h1 {
-    font-family: "Jua";
-    font-size: 3.5rem;
-    color: var(--brown);
-    padding-top: 0.5rem;
+    margin-top: -7%;
+    font-family: "Ahsing";
+    font-size: 8rem;
+    color: #af5a47;
+    letter-spacing: 0.5rem;
+}
+
+.col h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    color: var(--pink);
+    font-style: italic;
+    text-shadow: 1px 1px 1.3px rgba(0, 0, 0, 0.2);
+}
+
+.col h4 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    color: var(--pink);
+    font-style: italic;
+    margin-bottom: 2rem;
 }
 
 .col button {
@@ -48,16 +74,6 @@
     transition: ease-in-out 0.3s;
     transform: translateY(-2px);
 }
-
-hr {
-    border: 3px solid white;
-    border-radius: 7px 7px 7px 7px;
-    margin-bottom: 1.5rem;
-    margin-top: 0.5rem;
-    opacity: 1;
-    width: 50%;
-}
-
 /* button */
 
 .type--A {
@@ -73,7 +89,7 @@ hr {
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    color: var(--orange);
+    color: var(--pink);
     letter-spacing: 2px;
     transition: all 0.3s ease;
 }
@@ -93,7 +109,7 @@ hr {
     position: absolute;
     height: 3px;
     border-radius: 2px;
-    background: var(--orange);
+    background: var(--pink);
     transition: all 0.5s ease;
 }
 .button::before {
@@ -131,7 +147,7 @@ hr {
     height: 100%;
     box-sizing: border-box;
     border-radius: 300px;
-    border: solid 3px var(--orange);
+    border: solid 3px var(--pink);
 }
 .button__line:nth-child(1),
 .button__line:nth-child(1)::before {
@@ -222,7 +238,7 @@ hr {
 .button__drow2,
 .button__drow2::before,
 .button__drow2::after {
-    background: white;
+    background: var(--light-pink);
 }
 .button:hover .button__drow1 {
     animation: drow1 ease-in 0.06s;

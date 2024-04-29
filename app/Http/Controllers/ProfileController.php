@@ -31,6 +31,11 @@ class ProfileController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
+        ],
+        [
+            'name.required' => 'Name is required',
+            'email.required' => 'Email is required',
+            'password.required' => 'Password is required'
         ]);
 
         DB::table('users')->where('id', Auth::user()->id)->update([

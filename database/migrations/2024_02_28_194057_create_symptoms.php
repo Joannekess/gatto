@@ -12,13 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('symptoms', function (Blueprint $table) {
+
             $table->id();
-            $table->string('KodeGejala');
-            $table->string('NamaGejala');
-            $table->string('KodePenyakit');
-            $table->string('NamaPenyakit');
-            $table->float('CFValue');
-            $table->timestamps();
+            $table->string('kodeGejala');
+            $table->string('namaGejala');
+            
+
+            // $table->id();
+            // $table->string('KodeGejala');
+            // $table->string('NamaGejala');
+            // $table->string('KodePenyakit');
+            // $table->string('NamaPenyakit');
+            // $table->float('CFValue');
+            // $table->timestamps();
         });
     }
 

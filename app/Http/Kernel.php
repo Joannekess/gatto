@@ -43,6 +43,16 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+
+        'admin' => [
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            // \Illuminate\Session\Middleware\AuthenticateSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ]
     ];
 
     /**
@@ -66,5 +76,7 @@ class Kernel extends HttpKernel
 
         'userlogin' => \App\Http\Middleware\UserLogin::class,
         'alrlogin' => \App\Http\Middleware\AlrLogin::class,
+        'adminauthenticated' => \App\Http\Middleware\AdminAuthenticated::class,
+        'adminlogin' => \App\Http\Middleware\AdminLogin::class,
     ];
 }

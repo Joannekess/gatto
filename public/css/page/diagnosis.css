@@ -1,6 +1,6 @@
 .content {
-    background-color: var(--dark-purple);
-    background-image: url(../../image/bg-circle4.png);
+    background-color: var(--background);
+    background-image: url(../../image/bg-glow2.png);
     min-height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -12,67 +12,99 @@
 .title h2 {
     margin-top: 2.5rem;
     font-family: "Moon";
-    font-size: 2rem;
-    letter-spacing: 0.5rem;
-    padding-top: 0;
-    text-align: center;
-    color: white;
-}
-
-.title h3 {
-    margin-top: 1.5rem;
-    font-family: "Jua";
-    font-size: 2rem;
-    letter-spacing: 0.3rem;
-    text-align: center;
-    padding-top: 0;
-    color: white;
-}
-
-.box-form {
-    background-color: var(--cream);
-    width: 75%;
-    justify-content: center;
-    margin-top: 3rem;
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
-}
-
-.t-diagnosis {
-    width: 100%;
-    font-family: "Jua";
-    font-size: 1.4rem;
-    color: var(--brown);
-}
-
-.choice select {
-    color: var(--brown);
-    border-radius: 5px;
-    padding: 0.2rem 0rem 0.2rem 1rem;
-    margin-right: 2.7rem;
-    border: none;
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* button {
-    font-family: "Moon";
-    font-size: 1rem;
-    color: white;
-    background-color: var(--dark-purple);
-    padding: 0.5rem 1.5rem;
+    font-size: 1.5rem;
     letter-spacing: 0.2rem;
-    border-radius: 20px;
+    word-spacing: 0.3rem;
+    padding-top: 4vh;
+    text-align: center;
+    color: var(--dark-pink);
+}
+
+input[type="text"] {
+    margin-top: 3vh;
+    width: 40%;
+    font-family: "Jua";
+    font-size: 1.2rem;
+    background-color: var(--light-pink);
+    color: var(--brown);
     border: none;
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-} */
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+    box-shadow: inset 5px 5px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+form h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.3rem;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    color: var(--dark-pink);
+    letter-spacing: 0.3rem;
+    padding: 8vh 35vh 0 35vh !important;
+}
+
+.title-question {
+    font-family: "Jua";
+    font-size: 1.8rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    color: var(--dark-pink);
+    letter-spacing: 0.1rem;
+}
+
+.box-select {
+    border: none;
+    overflow: hidden;
+    height: 5rem;
+}
+.box-select::-moz-focus-inner {
+    border: 0;
+}
+.box-select:focus {
+    outline: none;
+}
+.box-select option {
+    font-family: "Jua";
+    font-size: 1.2rem;
+    margin: 0 8px;
+    margin-top: 1rem !important;
+    width: 10rem;
+    padding: 10px 0;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color: var(--light-pink);
+    border-radius: 10px;
+    color: var(--dark-pink);
+}
+
+.box-select option:hover {
+    background-color: #767676;
+    color: white;
+}
+
+.form-select {
+    background-color: transparent;
+}
+
+select:focus {
+    box-shadow: none !important;
+}
+
+select:-internal-list-box option:checked {
+    background-color: var(--light-pink) !important;
+    color: light-dark(rgb(255, 255, 255), rgb(16, 16, 16)) !important;
+}
 
 .submit {
-    --c: var(--dark-purple); /* the color*/
+    --c: #fb9780; /* the color*/
     font-family: "Moon";
     font-size: 1rem;
-    color: var(--brown);
+    width: 10vw;
+    color: #fb9780;
     padding: 0.5rem 1.5rem;
+    margin-top: 5vh !important;
     letter-spacing: 0.2rem;
     border-radius: 20px;
     border: none;

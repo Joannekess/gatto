@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gatto</title>
 
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('image/G.ico') }}" />
+
+
     <link rel="stylesheet" href="{{ asset('css/template/app.css') }}">
     
     {{-- Bootstrap CSS --}}
@@ -31,12 +34,10 @@
 </head>
 <body>
     <section>
-
-    <div class="content">
-        @include('template.navbar')
-        @yield('content')
-    </div>
-    @include('template.footer')
+        <div class="content">
+            @include('template.navbar')
+            @yield('content')
+        </div>
     </section>
 
     @if ($errors->any())
@@ -48,6 +49,16 @@
             })
         </script>
     @endif 
+
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+            })
+        </script>
+    @endif
 
 </body>
 </html>

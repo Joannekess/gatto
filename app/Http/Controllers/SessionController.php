@@ -39,7 +39,7 @@ class SessionController extends Controller
         if (Auth::attempt($infologin)) {
             // Authentication passed...
             $request->session()->regenerate();
-            return redirect()->intended('/home');
+            return redirect()->intended('/home')-> with('success', 'Login success');
         } else {
             // Authentication failed...
             return redirect('/login')->withErrors('Your email or password is incorrect');
@@ -49,7 +49,7 @@ class SessionController extends Controller
     function logout()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect('/login') -> with('success', 'Logout success');
 
     }
 
@@ -85,7 +85,7 @@ class SessionController extends Controller
 
         // $create = DB::table('users')->insert($infocreate);
         if ($data) {
-            return redirect('/login')->with('success');
+            return redirect('/login')->with('success', 'User created successfully');
             
         } else {
             return redirect('/signup')->withErrors('Failed to create user');

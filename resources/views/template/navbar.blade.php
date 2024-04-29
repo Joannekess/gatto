@@ -1,28 +1,3 @@
-<!-- <header>
-    @guest
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <div class="navbar-brand">
-                <a href="{{ url('/') }}">Gatto</a>
-            </div>
-        <btn>
-            <a href="{{ url('/login') }}"  class="login"> <img src="{{ asset('/image/paw.png')}}">LOGIN</a>
-        </btn>
-        </div>
-    </nav> 
-    @else
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <div class="navbar-brand">
-                <a href="{{ url('/logout') }}">Gatto</a>
-            </div>
-            <form action="/logout" id="logout">
-                <button class="navbar-nav login btn" type="button" name="logout" id="logout"> <img src="{{ asset('/image/paw.png')}}"> LOGOUT </button>
-            </form>
-        </div>
-    </nav>
-    @endguest
-</header> -->
 
 <header>
     @guest 
@@ -37,7 +12,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <div class="navbar-brand">
-                <a href="{{ url('/') }}" style="color: white;">Gatto</a>
+                <a href="{{ url('/') }}">Gatto</a>
             </div>
             <div class="m-0 d-lg-flex col-lg-8 d-none justify-content-center nav-content">
                 <a href="/home" class="px-4 fs-4 mt-3">HOME</a>

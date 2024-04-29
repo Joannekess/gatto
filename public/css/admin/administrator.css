@@ -1,0 +1,143 @@
+.content {
+    background-color: var(--background);
+    /* background-image: url(../../image/bg-circle2.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.row {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    max-height: 100vh;
+}
+
+.title h3 {
+    color: var(--pink);
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+    /* margin-top: 2rem; */
+    margin-bottom: -2.5rem;
+}
+
+.title h1 {
+    text-transform: uppercase;
+    color: var(--dark-pink);
+    font-family: "Ahsing";
+    font-size: 8rem;
+    letter-spacing: 1rem;
+}
+
+.card {
+    box-shadow: 0.5rem 0.5rem 1rem 0 rgba(92, 72, 72, 0.2);
+    border-radius: 1.4rem;
+    border: none;
+    padding: 3rem 0;
+    width: 300px;
+    height: 200px;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.card h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    color: var(--dark-pink);
+    font-weight: 800;
+    font-style: italic;
+}
+
+.main-cat {
+    max-width: 90%;
+    height: 100%;
+    filter: drop-shadow(0 0 10rem var(--pink));
+}
+
+#admin h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 0.7rem;
+    color: var(--dark-pink);
+    text-shadow: 1px 1px 1.3px rgba(0, 0, 0, 0.2);
+}
+
+.table-data {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--box) !important;
+    border-radius: 20px;
+    box-shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.25);
+}
+
+th {
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--light-pink);
+}
+
+td {
+    font-family: "Jua";
+    /* text-transform: uppercase; */
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--dark-pink);
+    text-align: center;
+    padding: 0.3rem;
+}
+
+td a {
+    color: var(--dark-pink);
+    font-size: 2rem;
+}
+
+td a:hover {
+    transition: ease-in-out 0.2s;
+    color: var(--pink);
+}
+
+.submit {
+    --c: #fb9780; /* the color*/
+    font-family: "Moon";
+    font-size: 1.2rem;
+    width: 10vw;
+    color: #fb9780;
+    padding: 0.8rem 2rem;
+    margin-top: 5vh !important;
+    letter-spacing: 0.1rem;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 0.1em inset var(--c);
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+        var(--_g) calc(200% - var(--_p, 0%)) 0%,
+        var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+        var(--_g) calc(200% - var(--_p, 0%)) 100%;
+    background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
+    outline-offset: 0.1em;
+    transition: background-size 0.4s, background-position 0s 0.4s;
+}
+
+.submit:hover {
+    --_p: 100%;
+    transition: background-position 0.4s, background-size 0s;
+    color: #fff;
+}
+
+.submit:active {
+    box-shadow: 0 0 9e9Q inset #0009;
+    background-color: var(--c);
+    color: #fff;
+}

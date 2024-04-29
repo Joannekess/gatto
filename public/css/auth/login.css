@@ -1,9 +1,10 @@
 .content {
-    background-color: var(--cream);
-    background-image: url(../../image/bg-circle2.png);
+    background-color: var(--background);
+    background-image: url(../../image/bg-circle-pink2.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    overflow: hidden;
 }
 
 .login-logo {
@@ -11,51 +12,87 @@
     margin-top: 80px;
 }
 
+.row {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    margin-top: 5%;
+}
+
+.main-image {
+    position: absolute;
+    top: -5px;
+    left: -20px;
+    filter: drop-shadow(0 0 10rem var(--pink));
+    height: 100%;
+    overflow: hidden;
+}
+
 .card {
+    height: 50%;
     padding: 20px;
     border-radius: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
     background-color: white;
-    width: 50%;
+    /* width: 50%; */
+    filter: drop-shadow(0 0 5rem var(--light-pink));
+
+    box-shadow: 0 0 3rem 0 rgba(131, 13, 13, 0.2);
+    border-radius: 1.3rem;
+    background-color: rgba(255, 255, 255, 0.3);
+
+    border: none;
+    padding: 3rem;
+}
+
+.card-body .gatto {
+    font-family: "Ahsing";
+    font-size: 3rem;
+    padding-top: 0;
+    padding-bottom: 1rem;
+    color: #fb9780;
+    text-align: center;
 }
 
 .card-body h1 {
     font-family: Moon;
-    color: var(--brown);
+    color: var(--dark-pink);
+    letter-spacing: 0.5rem;
 }
 
 .form-label {
     font-family: Jua;
-    color: var(--brown);
-    font-size: 1.5rem;
+    color: var(--pink);
+    font-size: 2rem;
 }
 
 .form-control {
-    border-radius: 50px;
-    background-color: var(--cream);
-    color: var(--brown);
+    /* border-radius: 50px; */
+    background-color: var(--light-pink);
+    color: white;
     font-family: Jua;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .form-check-label {
     font-family: Jua;
-    color: var(--brown);
+    color: var(--pink);
 }
 
 .login-form {
     font-family: "Moon";
     font-size: 1.1em;
     color: #fff;
-    background-color: var(--brown);
+    background-color: var(--pink);
     padding: 0.6rem 3rem;
     border-radius: 50px;
-    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
     letter-spacing: 5px;
 }
 
 .login-form:hover {
-    background-color: var(--light-brown);
+    background-color: var(--dark-pink);
     color: #fff;
     transition: ease-in-out 0.3s;
     transform: translateY(-2px);
@@ -63,11 +100,11 @@
 
 .text-signup {
     font-family: Jua;
-    color: var(--brown);
+    color: var(--dark-pink);
     font-size: 1.2rem;
 }
 
 .text-signup a {
-    color: var(--orange);
+    color: var(--pink);
     text-decoration: none;
 }

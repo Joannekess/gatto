@@ -4,10 +4,17 @@
 @endsection
 @section('content')
 <div class="container">
-    <img src="{{ asset('/image/logo-brown.png') }}" alt="logo"  class="img-fluid mx-auto d-block login-logo">
+    <div class="row">
+        <div class="col">
+            <div class="main-image">
+                <img src="{{ asset('/image/cat/9.png') }}" alt="hand" class="float-start img-fluid home-bg d-block">
+            </div>
+        </div>
+        <div class="col">
+    {{-- <img src="{{ asset('/image/logo-brown.png') }}" alt="logo"  class="img-fluid mx-auto d-block login-logo"> --}}
     <div class="card mx-auto">
         <div class="card-body">
-            <h1 class="text-center pb-4">Gatto Sign Up</h1>
+            <h1 class="text-center pb-4">USER SIGNUP</h1>
             <form method="POST" action="/signup/user">
                 @csrf
                 <div class="mb-1">
@@ -28,6 +35,7 @@
                 <div class="text-center text-login pt-3">
                     <h5>Already have account? Login <a href="/login">here!</a> </h5>
                 </div>
+            </div>
         </div>
     </div>
 </div>

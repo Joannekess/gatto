@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('diseases', function (Blueprint $table) {
             $table->id();
+            $table->string('kodePenyakit');
             $table->string('namaPenyakit');
-            $table->string('detailPenyakit');
-            $table->string('pencegahanPenyakit');
+            $table->string('detailPenyakit', 1000);
+            $table->string('pencegahanPenyakit' , 1000);
             $table->timestamps();
         });
     }

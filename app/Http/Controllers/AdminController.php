@@ -186,12 +186,14 @@ class AdminController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique:users',
             'password' => 'required',
         ],
         [
             'name.required' => 'Name is required',
             'email.required' => 'Email is required',
+            'email.email' => 'Email is not valid',
+            'email.unique' => 'Email has been used',
             'password.required' => 'Password is required'
         ]);
 

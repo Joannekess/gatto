@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ asset('css/admin/history.css') }}">
 @endsection
 @section('content')
-<div class="container mt-5" id="admin">
+<div class="container mt-5 pb-5" id="admin">
     <div class="d-flex justify-content-between align-items-center">
         <div style="color: transparent"></div>
         <div style="color: transparent"></div>

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class RulesSeeders extends Seeder
 {
@@ -228,6 +229,47 @@ class RulesSeeders extends Seeder
             'gejala_id' => 31,
             'CFValue' => 0.4,
         ]);
+        
+        // $totalPenyakit = count(DB::table('diseases')->get());
+        // Log::info($totalPenyakit);
+        // for($j = 1; $j <= $totalPenyakit; $j++){
+        //     $i = count(DB::table('rules')->where('penyakit_id',[$j])->get()) + 1;
+        //     for($i; $i <= 32; $i++){
+        //     DB::table('rules')->insert([
+        //         'penyakit_id' => $j,
+        //         'gejala_id' => $i,
+        //         'CFValue' => 0,
+        //     ]);
+        //     Log::info($i. 'dan' .$j);
+        //     }
+        // }
+
+        $request = DB::table('rules')->get();
+        Log::info($request);
+
+        $totalPenyakit = count(DB::table('diseases')->get());
+        Log::info($totalPenyakit);
+        for($j = 1; $j <= $totalPenyakit; $j++){
+            for($i = 1; $i < 32; $i++){
+                if(DB::table('rules')->where('penyakit_id', $j)->where('gejala_id', $i)->doesntExist()){
+                    DB::table('rules')->insert([
+                        'penyakit_id' => $j,
+                        'gejala_id' => $i,
+                        'CFValue' => 0,
+                    ]);
+                }
+            }
+        }
+
+        
+        // $i = count(DB::table('rules')->where('penyakit_id',[$j])->get());
+        // for($i; $i < 32; $i++){
+        //     DB::table('rules')->insert([
+        //         'penyakit_id' => 1,
+        //         'gejala_id' => $i,
+        //         'CFValue' => 0,
+        //     ]);
+        // }
 
     }
 }

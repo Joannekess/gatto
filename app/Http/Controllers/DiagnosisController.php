@@ -31,7 +31,9 @@ class DiagnosisController extends Controller
         for($i = 1; $i <= $totalPenyakit; $i++) {
             $j = 1;
 
-            $symptoms = Rule::where('penyakit_id', $i)->get();
+            $symptoms = Rule::where('penyakit_id', $i)->orderBy('gejala_id')->get();
+            Log::info('Gejala');
+            Log::info($symptoms);
             foreach ($symptoms as $symptom) {
                 $CFHe[$j] = $symptom->CFValue * $request[$j];
                 $j++;
@@ -48,8 +50,13 @@ class DiagnosisController extends Controller
             $CFCombine = $nilaiCFHe[$i][1] + ($nilaiCFHe[$i][2] * (1-$nilaiCFHe[$i][1]));
             for ($j=3; $j <= count($nilaiCFHe[$i]); $j++) { 
                 $CFCombine = $CFCombine + ( $nilaiCFHe[$i][$j] * (1-$CFCombine));
+                $test[$j] = $CFCombine;
             };
+            Log::info('CF test');
+            Log::info($test);
             $nilaiCFCombine[$i] = $CFCombine;
+
+
         }
         Log::info('Nilai CFCombine');
         Log::info($nilaiCFCombine);
@@ -58,12 +65,30 @@ class DiagnosisController extends Controller
         
         $value = max($nilaiCFCombine);
 
+        // if ($value == 0) {
+        //     return redirect()->back()->withErrors('Tidak ada penyakit yang terdeteksi');
+        // }
+
         Log::info('Nilai Max CFCombine');
         Log::info($value);
 
         $disease = Disease::where('id', array_search($value, $nilaiCFCombine))->first();
         Log::info('Penyakit');
         Log::info($disease);
+
+        // $request->validate([
+        //     'namaKucing' => 'required'
+        // ], 
+        // [
+        //     'namaKucing.required' => 'Nama Kucing harus diisi'
+        // ]);
+        
+        
+
+        if($request->namaKucing == null) {
+            $request->namaKucing = 'Kucing';
+        }
+        Log::info($request->namaKucing);
 
         $hasilDiagnosis = [
             'finalResult' => $value * 100,
@@ -78,7 +103,7 @@ class DiagnosisController extends Controller
             'user_id' => Auth::id(),
             'penyakit_id' => $disease->id,
             'hasilDiagnosis' => $hasilDiagnosis['finalResult'],
-            'namaKucing' => $request['namaKucing'],
+            'namaKucing' => $request->namaKucing,
             'created_at' => now(),
             'updated_at' => now()
         ]);

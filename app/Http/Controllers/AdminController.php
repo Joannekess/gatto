@@ -272,7 +272,7 @@ class AdminController extends Controller
             ->orWhere('symptoms.namaGejala', 'like', '%' . $request->search . '%')
             ->orWhere('rules.CFValue', 'like', '%' . $request->search . '%')
             ->orderBy('rules.penyakit_id', 'asc')
-            ->paginate(15);
+            ->paginate(100);
 
         $penyakit = DB::table('diseases')->get();
         

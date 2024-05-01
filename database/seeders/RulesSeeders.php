@@ -195,7 +195,7 @@ class RulesSeeders extends Seeder
         DB::table('rules')->insert([
             'penyakit_id' => 4,
             'gejala_id' => 29,
-            'CFValue' => 0.4,
+            'CFValue' => 0.8,
         ]);
 
         // P05
@@ -222,12 +222,12 @@ class RulesSeeders extends Seeder
         DB::table('rules')->insert([
             'penyakit_id' => 5,
             'gejala_id' => 9,
-            'CFValue' => 0.2,
+            'CFValue' => 0.8,
         ]);
         DB::table('rules')->insert([
             'penyakit_id' => 5,
             'gejala_id' => 31,
-            'CFValue' => 0.4,
+            'CFValue' => 1,
         ]);
         
         // $totalPenyakit = count(DB::table('diseases')->get());

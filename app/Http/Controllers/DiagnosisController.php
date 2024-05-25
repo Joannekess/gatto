@@ -50,10 +50,10 @@ class DiagnosisController extends Controller
             $CFCombine = $nilaiCFHe[$i][1] + ($nilaiCFHe[$i][2] * (1-$nilaiCFHe[$i][1]));
             for ($j=3; $j <= count($nilaiCFHe[$i]); $j++) { 
                 $CFCombine = $CFCombine + ( $nilaiCFHe[$i][$j] * (1-$CFCombine));
-                $test[$j] = $CFCombine;
+                // $test[$j] = $CFCombine;
             };
-            Log::info('CF test');
-            Log::info($test);
+            // Log::info('CF test');
+            // Log::info($test);
             $nilaiCFCombine[$i] = $CFCombine;
 
 

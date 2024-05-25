@@ -252,6 +252,7 @@ class AdminController extends Controller
             ->join('symptoms', 'rules.gejala_id', '=', 'symptoms.id')
             ->select('rules.*', 'diseases.namaPenyakit as namaPenyakit', 'symptoms.namaGejala as namaGejala')
             ->orderBy('rules.penyakit_id', 'asc')
+            ->where('rules.CFValue', '!=', 0)
             ->paginate(15);
             // ->get();
         $penyakit = DB::table('diseases')->get();
@@ -269,8 +270,9 @@ class AdminController extends Controller
             ->join('symptoms', 'rules.gejala_id', '=', 'symptoms.id')
             ->select('rules.*', 'diseases.namaPenyakit as namaPenyakit', 'symptoms.namaGejala as namaGejala')
             ->where('diseases.namaPenyakit', 'like', '%' . $request->search . '%')
-            ->orWhere('symptoms.namaGejala', 'like', '%' . $request->search . '%')
-            ->orWhere('rules.CFValue', 'like', '%' . $request->search . '%')
+            ->where('rules.CFValue', '!=', 0)
+            // ->orWhere('symptoms.namaGejala', 'like', '%' . $request->search . '%')
+            // ->orWhere('rules.CFValue', 'like', '%' . $request->search . '%')
             ->orderBy('rules.penyakit_id', 'asc')
             ->paginate(100);
 
@@ -289,18 +291,32 @@ class AdminController extends Controller
 
     function createRules(Request $request): RedirectResponse
     {
-        $this->validate($request, [
-            'cf' => 'required',
-        ],
-        [
-            'cf.required' => 'CF Value is required',
-        ]);
+        if (DB::table('rules')
+            ->where('gejala_id', $request->gejala_id)
+            ->where('penyakit_id', $request->penyakit_id)
+            ->where('CFValue', '!=', '0')
+            ->exists()
+            ) {
+            $this->validate($request, [
+            'gejala_id' => 'unique:rules',
+            ],
+            [
+            'gejala_id.unique' => 'Rule already exists',
+            ]);
+        }
 
-        DB::table('rules')->insert([
-            'penyakit_id' => $request->penyakit,
-            'gejala_id' => $request->gejala,
-            'CFValue' => $request->cf
-        ]);
+        $totalGejala = count(DB::table('symptoms')->get());
+        Log::info($totalGejala);
+
+        DB::table('rules')
+            ->where('gejala_id', $request->gejala_id)
+            ->where('penyakit_id', $request->penyakit_id)
+            ->update([
+                'penyakit_id' => $request->penyakit_id,
+                'gejala_id' => $request->gejala_id,
+                'CFValue' => $request->CFValue
+            ]);
+
         Log::info($request);
         return redirect('/admin/rules')->with('success', 'Rule created successfully');
     }
@@ -315,6 +331,7 @@ class AdminController extends Controller
 
     function editRules(Request $request, string $id): RedirectResponse
     {
+
         $rules = Rule::findOrFail($id);
         $rules->update([
             'penyakit_id' => $request->penyakit,
@@ -363,6 +380,15 @@ class AdminController extends Controller
             'kodeGejala' => $request->kodeGejala,
             'namaGejala' => $request->namaGejala
         ]);
+
+        $totalPenyakit = count(DB::table('diseases')->get());
+        for ($i = 1; $i <= $totalPenyakit; $i++) { 
+            DB::table('rules')->insert([
+                'penyakit_id' => $i,
+                'gejala_id' => DB::table('symptoms')->max('id'),
+                'CFValue' => 0
+            ]);
+        }
 
         return redirect('/admin/symptoms')->with('success', 'Symptom created successfully');
     }
@@ -435,6 +461,16 @@ class AdminController extends Controller
             'pencegahanPenyakit' => $request->pencegahanPenyakit
         ]);
 
+        $totalGejala = count(DB::table('symptoms')->get());
+
+        for ($i = 1; $i <= $totalGejala; $i++) { 
+            DB::table('rules')->insert([
+                'penyakit_id' => DB::table('diseases')->max('id'),
+                'gejala_id' => $i,
+                'CFValue' => 0
+            ]);
+        }
+
         return redirect('/admin/diseases')->with('success', 'Disease created successfully');
     }
 
@@ -448,12 +484,14 @@ class AdminController extends Controller
     {
         $this->validate($request, [
             'kodePenyakit' => 'required',
+            // 'kodePenyakit' => 'required|unique:diseases',
             'namaPenyakit' => 'required',
             'detailPenyakit' => 'required',
             'pencegahanPenyakit' => 'required',
         ],
         [
             'kodePenyakit.required' => 'Disease Code is required',
+            // 'kodePenyakit.unique' => 'Disease Code has been used',
             'namaPenyakit.required' => 'Disease Name is required',
             'detailPenyakit.required' => 'Disease Detail is required',
             'pencegahanPenyakit.required' => 'Disease Prevention is required'

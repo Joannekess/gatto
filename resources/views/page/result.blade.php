@@ -13,10 +13,10 @@
                 <h2>{{ $hasilDiagnosis['diseaseName'] }}</h2>
                 <h3>{{ number_format($hasilDiagnosis['finalResult'], 2, '.', ',') }}%</h3>
                 <p>{{ $hasilDiagnosis['diseaseDetail'] }}</p>
-                <h5>PENCEGAHAN</h5>
-                <p>{{ $hasilDiagnosis['pencegahan'] }}</p>
+                {{-- <h5>PENCEGAHAN</h5>
+                <p>{{ $hasilDiagnosis['pencegahan'] }}</p> --}}
                 <div class="chat">
-                    <a href="https://wa.me/{{ $chat->phone }}?text={{ $chat->message }}" target="_blank">CHAT DOKTER</a> 
+                    <a href="https://wa.me/{{ $chat->phone }}?text={{ $chat->message }}  Kucing saya didiagnosa penyakit {{ $hasilDiagnosis['diseaseName'] }} sebesar {{  number_format($hasilDiagnosis['finalResult'], 2, '.', ',')  }}%" target="_blank">CHAT DOKTER</a> 
                 </div>
             </div>
         </div>

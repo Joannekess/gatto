@@ -9,6 +9,13 @@ class Disease extends Model
 {
     use HasFactory;
 
+    protected $table = "diseases";
+
+    protected $fillable = [
+        "name",
+        "description"
+    ];
+
     protected $guarded = [
         "id",
         "created_at",

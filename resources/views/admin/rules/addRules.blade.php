@@ -16,7 +16,7 @@
                     @method('POST')
                     <div class="form-group">
                         <label for="name">Nama Penyakit</label>
-                        <select name="penyakit" id="penyakit">
+                        <select name="penyakit_id" id="penyakit_id">
                             @foreach($diseases as $diseases)
                                 <option value="{{ $diseases->id }}">{{ $diseases->namaPenyakit }}</option>
                             @endforeach
@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <label for="name">Nama Gejala</label>
-                        <select name="gejala" id="gejala">
+                        <select name="gejala_id" id="gejala_id">
                             @foreach($symptoms as $symptoms)
                                 <option value="{{ $symptoms->id }}">{{ $symptoms->namaGejala }}</option>
                             @endforeach
@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label for="name">CF Value</label>
-                            <select name="cf" id="cf">
+                            <select name="CFValue" id="CFValue">
                                 <option value="0">Tidak Bergejala</option>
                                 <option value="0.2">Tidak Tau</option>
                                 <option value="0.4">Sedikit Yakin</option>

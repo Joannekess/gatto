@@ -48,10 +48,10 @@
                     <h2>{{ $history->namaPenyakit }}</h2>
                     <h3>{{ number_format($history->hasilDiagnosis, 2, '.', ',') }}%</h3>
                     <p>{{ $history->detailPenyakit }}</p>
-                    <h5>PENCEGAHAN</h5>
-                    <p>{{ $history->pencegahanPenyakit }}</p>
+                    {{-- <h5>PENCEGAHAN</h5> --}}
+                    {{-- <p>{{ $history->pencegahanPenyakit }}</p> --}}
                     <div class="chat">
-                        <a href="https://wa.me/{{ $chat->phone }}?text={{ $chat->message }}" target="_blank">CHAT DOKTER</a> 
+                        <a href="https://wa.me/{{ $chat->phone }}?text={{ $chat->message }}  Kucing saya didiagnosa penyakit {{ $history->namaPenyakit }} sebesar {{  number_format($history->hasilDiagnosis, 2, '.', ',') }}%" target="_blank">CHAT DOKTER</a> 
                     </div>
                 </div>
             </div>

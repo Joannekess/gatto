@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('penyakit_id');
-            $table->foreign('penyakit_id')->references('id')->on('diseases');
+            $table->foreign('penyakit_id')->references('id')->on('diseases')->onDelete('cascade');
             $table->string('hasilDiagnosis');
             $table->string('namaKucing');
             $table->timestamps();

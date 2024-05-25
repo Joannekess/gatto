@@ -18,9 +18,9 @@ return new class extends Migration
             // $table->integer('kodeGejala')->unsigned();
             // $table->foreign('kodeGejala')->references('kodeGejala')->on('symptoms');
             $table->unsignedBigInteger('penyakit_id');
-            $table->foreign('penyakit_id')->references('id')->on('diseases');
+            $table->foreign('penyakit_id')->references('id')->on('diseases')->onDelete('cascade');
             $table->unsignedBigInteger('gejala_id');
-            $table->foreign('gejala_id')->references('id')->on('symptoms');
+            $table->foreign('gejala_id')->references('id')->on('symptoms')->onDelete('cascade');
             $table->float('CFValue');
             $table->timestamps();
         });

@@ -1,7 +1,7 @@
 .content {
     background-color: var(--background);
     background-image: url(../../image/bg-glow2.png);
-    min-height: 100%;
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -130,4 +130,35 @@ select:-internal-list-box option:checked {
     box-shadow: 0 0 9e9Q inset #0009;
     background-color: var(--c);
     color: #fff;
+}
+
+.col {
+    font-family: "Montserrat", sans-serif;
+    margin: 1rem;
+}
+.col .btn {
+    --bs-btn-hover-border-color: var(--dark-pink) !important;
+    --bs-btn-border-color: var(--dark-pink) !important;
+    --bs-btn-bg: var(--light-pink) !important;
+    --bs-btn-color: var(--dark-pink) !important;
+    width: 10vw;
+    height: 12vw;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--dark-pink);
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+    background-color: var(--light-pink) !important;
+    color: var(--dark-pink);
 }

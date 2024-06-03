@@ -44,7 +44,9 @@ Route::group(['middleware' => 'userlogin'], function () {
     Route::get('/home', [HomeController::class, 'index']);
     // Diagnose
     Route::get('/diagnose', [DiagnosisController::class, 'diagnosis']);
-    Route::post('/diagnose', [DiagnosisController::class, 'diagnosisRun']) -> name('diagnosisRun');
+    Route::post('/diagnose', [DiagnosisController::class, 'selectdiagnosis']) -> name('selectdiagnosis');
+    Route::post('/diagnose/run', [DiagnosisController::class, 'diagnosisRun']) -> name('diagnosisRun');
+
     // Diseases
     Route::get('/diseases', [DiseasesController::class, 'diseases']);
     // Profile

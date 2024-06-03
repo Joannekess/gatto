@@ -8,11 +8,10 @@
         <h2>Hi, {{$data->name}}! Siapa nama kucing kamu?</h3>
     </div>    
     <div class="d-flex justify-content-center text-center">
-        <form action={{ route('selectdiagnosis') }} method="POST">
+        <form action={{ route('diagnosisRun') }} method="POST">
             <input type="text" id="namaKucing" name="namaKucing">
-            <h3 class="pb-5">Kucing kamu mengalami gejala apa?</h3>
-
-            {{-- @csrf
+            <h3>Apakah kucing kamu mengalami gejala ini?</h3>
+            @csrf
             @foreach ($symptoms as $symptom)
             <div class="justify-content-center d-flex">
                 <div class="justify-content-center">
@@ -28,20 +27,6 @@
                 </div>
             </div>
             @endforeach
-             --}}
-
-            @csrf
-            {{-- <div class="btn-group" role="group"> --}}
-            <div class="row">
-            @foreach ($symptoms as $symptom)
-            <div class="col">
-                <input class="btn-check" type="checkbox" id="{{ $symptom->id }}" name="gejala[]" value="{{ $symptom->id }}" autocomplete="off">
-                <label for="{{ $symptom->id }}" class="btn"> {{ $symptom->namaGejala }}</label><br>
-            </div>
-            @endforeach
-            </div>
-
-
             <button class="mx-auto text-center justify-content-center d-flex mt-3 submit">
                 SUBMIT
             </button>

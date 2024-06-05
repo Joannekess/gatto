@@ -52,6 +52,8 @@ class DiagnosisController extends Controller
 
     public function selectdiagnosis(Request $request){
 
+        $namaKucing = $request->namaKucing;
+
         $symptoms = Symptom::all();
         $rules = $request->gejala;
         $hasilrules = [];
@@ -65,8 +67,16 @@ class DiagnosisController extends Controller
         $rule1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         $rule2 = [1, 10, 11, 12, 13, 14, 15, 16, 17, 18];
         $rule3 = [19, 20, 21, 22, 23, 24];
-        $rule4 = [1, 4, 25, 26, 3, 2, 27, 28, 8, 29];
-        $rule5 = [2, 3, 8, 30, 9, 31];
+        $rule4 = [1, 2, 3, 4, 8, 25, 26, 27, 28, 29];
+        $rule5 = [2, 3, 8, 9, 30, 31];
+
+        if ($rules == $rule1 or $rules == $rule2 or $rules == $rule3 or $rules == $rule4 or $rules == $rule5){
+            return view('page.diagnosis2')->with('rules', $rules)->with('symptoms', $symptoms)->with('namaKucing', $namaKucing);
+        }
+        else {
+            return redirect()->back()->withErrors('Tidak ada penyakit yang terdeteksi');
+
+        }
 
         Log::info($rules);
 
@@ -77,9 +87,8 @@ class DiagnosisController extends Controller
             return redirect()->back()->withErrors('Tidak ada penyakit yang terdeteksi');
         }        
 
-        $namaKucing = $request->namaKucing;
 
-        return view('page.diagnosis2')->with('rules', $rules)->with('symptoms', $symptoms)->with('namaKucing', $namaKucing);
+        // return view('page.diagnosis2')->with('rules', $rules)->with('symptoms', $symptoms)->with('namaKucing', $namaKucing);
         
     }
 
